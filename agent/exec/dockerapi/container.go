@@ -210,7 +210,8 @@ func (c *containerConfig) hostConfig() *enginecontainer.HostConfig {
 		PortBindings: c.portBindings(),
 		Init:         c.init(),
 		Isolation:    c.isolation(),
-		CapAdd:       c.spec().CapabilityAdd,
+		Privileged:   c.spec().Privileged,
+                CapAdd:       c.spec().CapabilityAdd,
 		CapDrop:      c.spec().CapabilityDrop,
 	}
 
